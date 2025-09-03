@@ -11,15 +11,29 @@
                 <div class="p-6 text-gray-900">
                     {{ __("You're logged in!") }}
 
-                    <div class="mt-6 flex gap-4">
+                    <div class="mt-6 grid grid-cols-2 md:grid-cols-4 gap-4">
+
                         <a href="{{ route('classes.index') }}"
-                           class="px-4 py-2 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 transition">
-                            View All Classes
+                           class="px-4 py-2 bg-blue-200 text-gray-800 rounded-lg shadow hover:bg-blue-300 transition">
+                             View All Classes
                         </a>
 
+
                         <a href="{{ route('subjects.index') }}"
-                           class="px-4 py-2 bg-green-600 text-white rounded-lg shadow hover:bg-green-700 transition">
-                            View All Subjects
+                           class="px-4 py-2 bg-green-200 text-gray-800 rounded-lg shadow hover:bg-green-300 transition">
+                             View All Subjects
+                        </a>
+
+
+                        <a href="{{ route('categories.index') }}"
+                           class="px-4 py-2 bg-purple-200 text-gray-800 rounded-lg shadow hover:bg-purple-300 transition">
+                             View Categories
+                        </a>
+
+
+                        <a href="{{ route('posts.create') }}"
+                           class="px-4 py-2 bg-yellow-200 text-gray-800 rounded-lg shadow hover:bg-yellow-300 transition">
+                             Create Post
                         </a>
                     </div>
                 </div>

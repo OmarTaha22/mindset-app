@@ -4,6 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ClassesController;
 use App\Http\Controllers\SubjectController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\CategoryController;
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -28,5 +31,11 @@ Route::middleware('auth')->group(function () {
     Route::get('/subjects', [SubjectController::class, 'index'])->name('subjects.index');
     Route::delete('/subjects/{id}', [SubjectController::class, 'destroy'])->name('subjects.delete');
 });
+
+Route::get('/posts/create', [PostController::class, 'create'])->name('posts.create');
+
+Route::post('/posts', [PostController::class, 'store'])->name('posts.store');
+
+Route::resource('categories', CategoryController::class);
 
 require __DIR__.'/auth.php';
